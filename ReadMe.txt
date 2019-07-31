@@ -13,3 +13,5 @@ To deploy on AWS we can use NGINX for parsing static contents like css and gunic
 We can update the NGINX config file appropriately as above
 
 gunicorn lets us specify multiple worker threads which can handle multiple requests
+
+Complete detail about the project is present in EventCollector.docx
