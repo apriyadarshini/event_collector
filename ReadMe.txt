@@ -1,7 +1,7 @@
 How to run Event Collector locally:
 
 1) Install the packages present in requirements.txt
-2) from import create_app from EventCollector
+2) import create_app from EventCollector
 3) Initialize the app var to create_app()
 4) create all tables within this app context by importing all the tables present in EventCollector.models
 5) export FLASK_APP=run.py
