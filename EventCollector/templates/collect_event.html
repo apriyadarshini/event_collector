@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Enter the event to be collected</legend>
+                <div class="form-group">
+                    {{ form.event.label(class="form-control-label") }}
+                    {% if form.event.errors %}
+                        {{ form.event(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.event.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.event(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+            
+            <div class="navbar-nav mr-auto">
+    			<p>P.S: Only supported event is 'ssh attack'</p>
+    		</div>
+            
+        </form>
+    </div>
+    
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content%}
+<h1 class="mb-3">Search Results</h1>
+    {%if sch == 'nodata' %}
+    	<article class="media content-section">
+          <div class="media-body">
+            <p class="article-content">No data found for the query</p>
+          </div>
+        </article>
+    {% else %}
+		{% for res in sch.items %}
+			<article class="media content-section">
+	          <div class="media-body">
+	            <p class="article-content">{{res.events.ip_address}}:{{ res.events.time_stamp }}:{{res.events.name }}:{{res.events.fields}}</p>
+	          </div>
+	        </article>
+		{% endfor %}
+	{% endif %}
+	
+{% endblock content%}

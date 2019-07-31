@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content%}
+<h1 class="mb-3">Geo Location of {{geoloc.ipaddr}}</h1>
+	<div class="navbar-nav mr-auto">
+    	<a class="nav-item nav-link" href="{{ url_for('events.collect_event',ip=geoloc.ipaddr) }}">Collect events from {{geoloc.ipaddr}}</a>
+    </div>
+	<article class="media content-section">
+	   
+	   <div class="media-body">
+	   		
+           <p class="article-content">{{ geoloc.geolocjson }}</p>
+           
+        </div>
+     </article>
+	
+{% endblock content%}
